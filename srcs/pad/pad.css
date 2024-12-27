@@ -1,0 +1,38 @@
+.tool.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+
+  background-color: aqua;
+
+  height: 50%;
+  width: 100%;
+}
+
+.color.wrapper {
+  display: grid;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+
+  background-color: blueviolet;
+
+  height: 50%;
+  width: 100%;
+}
+
+.tool.panel {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 90%;
+
+  background-color: rgb(150, 83, 159);
+
+  height: 100%;
+}
