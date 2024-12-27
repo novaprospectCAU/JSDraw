@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+  overflow-y: hidden;
+}
+
+.background {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+
+  background-color: brown;
+  height: 100vh;
+  height: 100svh;
+}
+
+.pad.wrapper {
+  flex-wrap: 0;
+  flex-basis: 120px;
+  flex-shrink: 0;
+
+  padding: 40px;
+  background-color: antiquewhite;
+}
+
+.canvas.wrapper {
+  flex-wrap: 5;
+  flex-basis: 90%;
+  flex-shrink: 1;
+
+  padding: 40px;
+  background-color: aliceblue;
+}
