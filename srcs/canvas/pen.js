@@ -1,3 +1,7 @@
 import { CANVAS, CTX, WIDTH, HEIGHT } from "./canvas.js";
 
-CANVAS.addEventListener(() => {});
+function penInit() {}
+
+export function penDraw() {
+  penInit();
+}
