@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./srcs/layout/style.css" rel="stylesheet" />
     <link href="./srcs/pad/pad.css" rel="stylesheet" />
+    <link href="./srcs/canvas/canvas.css" rel="stylesheet" />
+    <script src="./srcs/canvas/canvas.js" type="module"></script>
     <title>drawing pad</title>
   </head>
   <body>
     <div class="background">
       <div class="pad wrapper">
         <div class="tool wrapper">
-          <div class="tool panel"></div>
+          <div class="tool panel">
+            <button class="pen">pen</button>
+            <button class="eraser">eraser</button>
+            <button class="spray">spray</button>
+            <button class="brush">brush</button>
+            <button class="ink">ink</button>
+            <button class="text">text</button>
+            <button class="line">line</button>
+            <button class="curve">curve</button>
+            <button class="rectangle">rectangle</button>
+            <button class="polygon">polygon</button>
+            <button class="oval">oval</button>
+            <button class="select rect">select rect</button>
+            <button class="select poly">select poly</button>
+            <button class="magnify">magnify</button>
+          </div>
         </div>
         <div class="color wrapper"></div>
       </div>
-      <div class="canvas wrapper"></div>
+      <div class="canvas wrapper">
+        <canvas id="paper"></canvas>
+      </div>
     </div>
   </body>
 </html>
