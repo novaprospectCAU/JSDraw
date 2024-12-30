@@ -4,6 +4,7 @@ import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
 import { lineMouseDown, lineMouseMove, lineMouseUp } from "./line.js";
+import { ovalMouseDown, ovalMouseMove, ovalMouseUp } from "./oval.js";
 import { penMouseDown, penMouseMove, penMouseUp } from "./pen.js";
 import {
   rectangleMouseDown,
@@ -100,6 +101,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "oval": {
+      ovalMouseDown(e);
       break;
     }
     case "select rect": {
@@ -156,6 +158,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "oval": {
+        ovalMouseMove(e);
         break;
       }
       case "select rect": {
@@ -214,6 +217,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "oval": {
+        ovalMouseUp(e);
         break;
       }
       case "select rect": {
