@@ -2,6 +2,7 @@
 import { hslInit } from "../pad/colorSelect.js";
 import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
+import { circleMouseDown, circleMouseMove, circleMouseUp } from "./circle.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
 import { lineMouseDown, lineMouseMove, lineMouseUp } from "./line.js";
 import { ovalMouseDown, ovalMouseMove, ovalMouseUp } from "./oval.js";
@@ -98,6 +99,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "circle": {
+      circleMouseDown(e);
       break;
     }
     case "oval": {
@@ -155,6 +157,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "circle": {
+        circleMouseMove(e);
         break;
       }
       case "oval": {
@@ -214,6 +217,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "circle": {
+        circleMouseUp(e);
         break;
       }
       case "oval": {
