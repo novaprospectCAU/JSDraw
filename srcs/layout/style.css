@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
 
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .background {
@@ -31,6 +31,8 @@ body {
 }
 
 .canvas.wrapper {
+  position: relative;
+
   flex-wrap: 5;
   flex-basis: 90%;
   flex-shrink: 1;

@@ -1,12 +1,7 @@
 export const CANVAS = document.getElementById("paper");
 export const CTX = CANVAS.getContext("2d");
-
-// export const { WIDTH, HEIGHT } = CANVAS;
-
-CANVAS.setAttribute("width", window.innerWidth);
-CANVAS.setAttribute("height", window.innerHeight);
-CANVAS.style.width = `${window.innerWidth}px`;
-CANVAS.style.height = `${window.innerHeight}px`;
+export const TEMP = document.getElementById("temp");
+export const TEMP_CTX = TEMP.getContext("2d");
 
 export const { WIDTH, HEIGHT } = window;
 
@@ -21,9 +16,22 @@ class DrawingInfo {
   }
 }
 
+function canvasInit() {
+  CANVAS.setAttribute("width", window.innerWidth);
+  CANVAS.setAttribute("height", window.innerHeight);
+  CANVAS.style.width = `${window.innerWidth}px`;
+  CANVAS.style.height = `${window.innerHeight}px`;
+
+  TEMP.setAttribute("width", window.innerWidth);
+  TEMP.setAttribute("height", window.innerHeight);
+  TEMP.style.width = `${window.innerWidth}px`;
+  TEMP.style.height = `${window.innerHeight}px`;
+}
+
+canvasInit();
 export const drawingInfo = new DrawingInfo();
 
-CANVAS.addEventListener("mousedown", (e) => {
+TEMP.addEventListener("mousedown", (e) => {
   drawingInfo.isDrawing = true;
   switch (drawingInfo.drawingMode) {
     case "pen": {
@@ -33,6 +41,9 @@ CANVAS.addEventListener("mousedown", (e) => {
       break;
     }
     case "eraser": {
+      drawingInfo.x = e.offsetX;
+      drawingInfo.y = e.offsetY;
+
       break;
     }
     case "spray": {
@@ -77,7 +88,7 @@ CANVAS.addEventListener("mousedown", (e) => {
   }
 });
 
-CANVAS.addEventListener("mousemove", (e) => {
+TEMP.addEventListener("mousemove", (e) => {
   if (drawingInfo.isDrawing) {
     switch (drawingInfo.drawingMode) {
       case "pen": {
@@ -93,6 +104,15 @@ CANVAS.addEventListener("mousemove", (e) => {
         break;
       }
       case "eraser": {
+        CTX.beginPath();
+        CTX.strokeStyle = "hsl(180deg, 100%, 100%)";
+        CTX.lineCap = "round";
+        CTX.lineWidth = 1;
+        CTX.moveTo(drawingInfo.x, drawingInfo.y);
+        CTX.lineTo(e.offsetX, e.offsetY);
+        CTX.stroke();
+        drawingInfo.x = e.offsetX;
+        drawingInfo.y = e.offsetY;
         break;
       }
       case "spray": {
@@ -154,6 +174,14 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "eraser": {
+        CTX.beginPath();
+        CTX.strokeStyle = "hsl(180deg, 100%, 100%)";
+        CTX.lineWidth = 1;
+        CTX.moveTo(drawingInfo.x, drawingInfo.y);
+        CTX.lineTo(e.offsetX, e.offsetY);
+        CTX.stroke();
+        drawingInfo.x = 0;
+        drawingInfo.y = 0;
         break;
       }
       case "spray": {
