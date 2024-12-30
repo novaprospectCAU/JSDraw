@@ -12,6 +12,7 @@ import {
   rectangleMouseMove,
   rectangleMouseUp,
 } from "./rectangle.js";
+import { squareMouseDown, squareMouseMove, squareMouseUp } from "./square.js";
 
 export const CANVAS = document.getElementById("paper");
 export const CTX = CANVAS.getContext("2d");
@@ -92,6 +93,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "square": {
+      squareMouseDown(e);
       break;
     }
     case "rectangle": {
@@ -150,6 +152,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "square": {
+        squareMouseMove(e);
         break;
       }
       case "rectangle": {
@@ -210,6 +213,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "square": {
+        squareMouseUp(e);
         break;
       }
       case "rectangle": {
