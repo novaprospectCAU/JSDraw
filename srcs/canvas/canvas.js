@@ -1,4 +1,4 @@
-import { colorInit } from "../pad/colorSelect.js";
+// import { colorInit } from "../pad/colorSelect.js";
 import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
@@ -27,7 +27,7 @@ class DrawingInfo {
 
 canvasInit();
 modeInit();
-colorInit();
+// colorInit();
 export const drawingInfo = new DrawingInfo();
 
 // -----------------------------------------
