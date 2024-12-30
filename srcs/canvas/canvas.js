@@ -5,6 +5,11 @@ import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
 import { lineMouseDown, lineMouseMove, lineMouseUp } from "./line.js";
 import { penMouseDown, penMouseMove, penMouseUp } from "./pen.js";
+import {
+  rectangleMouseDown,
+  rectangleMouseMove,
+  rectangleMouseUp,
+} from "./rectangle.js";
 
 export const CANVAS = document.getElementById("paper");
 export const CTX = CANVAS.getContext("2d");
@@ -88,6 +93,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "rectangle": {
+      rectangleMouseDown(e);
       break;
     }
     case "polygon": {
@@ -143,6 +149,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "rectangle": {
+        rectangleMouseMove(e);
         break;
       }
       case "polygon": {
@@ -200,6 +207,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "rectangle": {
+        rectangleMouseUp(e);
         break;
       }
       case "polygon": {
