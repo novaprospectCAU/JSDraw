@@ -3,6 +3,7 @@ import { hslInit } from "../pad/colorSelect.js";
 import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
+import { lineMouseDown, lineMouseMove, lineMouseUp } from "./line.js";
 import { penMouseDown, penMouseMove, penMouseUp } from "./pen.js";
 
 export const CANVAS = document.getElementById("paper");
@@ -10,7 +11,8 @@ export const CTX = CANVAS.getContext("2d");
 export const TEMP = document.getElementById("temp");
 export const TEMP_CTX = TEMP.getContext("2d");
 
-export const { WIDTH, HEIGHT } = window;
+export let WIDTH = CANVAS.width;
+export let HEIGHT = CANVAS.height;
 
 // 현재 그림도구에 대한 클래스
 class DrawingInfo {
@@ -29,11 +31,11 @@ class DrawingInfo {
 // -----------------------------------------
 // main logic
 
+// colorInit();
+export const drawingInfo = new DrawingInfo();
 canvasInit();
 modeInit();
 hslInit();
-// colorInit();
-export const drawingInfo = new DrawingInfo();
 
 // -----------------------------------------
 
@@ -47,6 +49,9 @@ function canvasInit() {
   TEMP.setAttribute("height", window.innerHeight);
   TEMP.style.width = `${window.innerWidth}px`;
   TEMP.style.height = `${window.innerHeight}px`;
+
+  WIDTH = CANVAS.width;
+  HEIGHT = CANVAS.height;
 }
 
 TEMP.addEventListener("mousedown", (e) => {
@@ -76,6 +81,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "line": {
+      lineMouseDown(e);
       break;
     }
     case "curve": {
@@ -130,6 +136,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "line": {
+        lineMouseMove(e);
         break;
       }
       case "curve": {
@@ -186,6 +193,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "line": {
+        lineMouseUp(e);
         break;
       }
       case "curve": {
