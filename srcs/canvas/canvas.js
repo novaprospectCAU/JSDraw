@@ -97,7 +97,7 @@ TEMP.addEventListener("mousedown", (e) => {
       rectangleMouseDown(e);
       break;
     }
-    case "polygon": {
+    case "circle": {
       break;
     }
     case "oval": {
@@ -154,7 +154,7 @@ TEMP.addEventListener("mousemove", (e) => {
         rectangleMouseMove(e);
         break;
       }
-      case "polygon": {
+      case "circle": {
         break;
       }
       case "oval": {
@@ -213,7 +213,7 @@ window.addEventListener("mouseup", (e) => {
         rectangleMouseUp(e);
         break;
       }
-      case "polygon": {
+      case "circle": {
         break;
       }
       case "oval": {

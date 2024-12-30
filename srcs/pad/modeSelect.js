@@ -13,7 +13,7 @@ const ModeSet = [
   "line",
   "curve",
   "rectangle",
-  "polygon",
+  "circle",
   "oval",
   "select rect",
   "select poly",
