@@ -91,7 +91,7 @@ TEMP.addEventListener("mousedown", (e) => {
       lineMouseDown(e);
       break;
     }
-    case "curve": {
+    case "square": {
       break;
     }
     case "rectangle": {
@@ -149,7 +149,7 @@ TEMP.addEventListener("mousemove", (e) => {
         lineMouseMove(e);
         break;
       }
-      case "curve": {
+      case "square": {
         break;
       }
       case "rectangle": {
@@ -209,7 +209,7 @@ window.addEventListener("mouseup", (e) => {
         lineMouseUp(e);
         break;
       }
-      case "curve": {
+      case "square": {
         break;
       }
       case "rectangle": {

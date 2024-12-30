@@ -11,7 +11,7 @@ const ModeSet = [
   "ink",
   "text",
   "line",
-  "curve",
+  "square",
   "rectangle",
   "circle",
   "oval",
