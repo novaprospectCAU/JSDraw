@@ -62,6 +62,13 @@ function canvasInit() {
   HEIGHT = CANVAS.height;
 }
 
+TEMP.addEventListener("dblclick", (e) => {
+  if (drawingInfo.drawingMode === "text") {
+    isDrawing = true;
+    while (isDrawing) {}
+  }
+});
+
 TEMP.addEventListener("mousedown", (e) => {
   drawingInfo.isDrawing = true;
   switch (drawingInfo.drawingMode) {
