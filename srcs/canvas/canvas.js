@@ -96,7 +96,7 @@ TEMP.addEventListener("mousedown", (e) => {
     case "select poly": {
       break;
     }
-    case "magnify": {
+    case "clear": {
       break;
     }
     default: {
@@ -150,7 +150,7 @@ TEMP.addEventListener("mousemove", (e) => {
       case "select poly": {
         break;
       }
-      case "magnify": {
+      case "clear": {
         break;
       }
       default: {
@@ -206,7 +206,7 @@ window.addEventListener("mouseup", (e) => {
       case "select poly": {
         break;
       }
-      case "magnify": {
+      case "clear": {
         break;
       }
       default: {

@@ -17,7 +17,7 @@ const ModeSet = [
   "oval",
   "select rect",
   "select poly",
-  "magnify",
+  "clear",
 ];
 
 export function modeInit() {
