@@ -33,12 +33,15 @@
 }
 
 .color.wrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
 
   background-color: blueviolet;
 
   padding: 16px 0 24px;
-  justify-content: center;
+
   gap: 16px 0;
 
   width: 100%;
@@ -50,6 +53,7 @@
   background-color: black;
 
   border-radius: 50%;
+  border: 3px solid;
 
   max-width: 150px;
   max-height: 150px;
@@ -57,7 +61,7 @@
 
 #picker {
   position: absolute;
-  background-color: azure;
+  background-color: transparent;
 
   border-radius: 50%;
   border: 3px solid;
