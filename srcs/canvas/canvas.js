@@ -1,4 +1,5 @@
 // import { colorInit } from "../pad/colorSelect.js";
+import { hslInit } from "../pad/colorSelect.js";
 import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
@@ -20,6 +21,9 @@ class DrawingInfo {
     this.x = 0;
     this.y = 0;
   }
+  updateColor(string) {
+    this.currentColor = string;
+  }
 }
 
 // -----------------------------------------
@@ -27,6 +31,7 @@ class DrawingInfo {
 
 canvasInit();
 modeInit();
+hslInit();
 // colorInit();
 export const drawingInfo = new DrawingInfo();
 

@@ -31,21 +31,12 @@
           </div>
         </div>
         <div class="color wrapper">
-          <!-- <canvas id="palette" width="150px" height="150px"></canvas>
-          <canvas id="picker" width="150px" height="150px"></canvas>
-          <div id="saturationControl">
-            <label for="saturationSlider">채도</label>
-            <input type="range" id="saturationSlider" min="0" max="100" />
-          </div>
-          <div id="lightControl">
-            <label for="lightSlider">명도</label>
-            <input type="range" id="lightSlider" min="0" max="100" />
-          </div> -->
           <div class="color values">
-            <div class="value" id="h">h: <textarea readonly></textarea></div>
-            <div class="value" id="s">s: <textarea readonly></textarea></div>
-            <div class="value" id="l">l: <textarea readonly></textarea></div>
+            <div class="value">h: <textarea id="h"></textarea></div>
+            <div class="value">s: <textarea id="s"></textarea></div>
+            <div class="value">l: <textarea id="l"></textarea></div>
           </div>
+          <button id="submitColor">색 결정</button>
         </div>
       </div>
       <div class="canvas wrapper">

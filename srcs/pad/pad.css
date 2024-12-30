@@ -47,36 +47,10 @@
   height: fit-content;
 }
 
-/* #palette {
-  position: relative;
-  background-color: black;
-
-  border-radius: 50%;
-  border: 3px solid;
-
-  max-width: 150px;
-  max-height: 150px;
+#submitColor {
+  width: 100px;
+  height: 40px;
 }
-
-#picker {
-  position: absolute;
-  background-color: transparent;
-
-  border-radius: 50%;
-  border: 3px solid;
-
-  max-width: 150px;
-  max-height: 150px;
-}
-
-#saturationControl,
-#lightControl {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-} */
 
 .color.values {
   display: grid;
