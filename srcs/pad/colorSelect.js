@@ -13,5 +13,3 @@ export function colorInit() {
   COLOR_PICKER.style.width = `${window.innerWidth}px`;
   COLOR_PICKER.style.height = `${window.innerHeight}px`;
 }
-
-COLOR_PICKER_CTX;

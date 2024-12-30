@@ -22,6 +22,16 @@ class DrawingInfo {
   }
 }
 
+// -----------------------------------------
+// main logic
+
+canvasInit();
+modeInit();
+colorInit();
+export const drawingInfo = new DrawingInfo();
+
+// -----------------------------------------
+
 function canvasInit() {
   CANVAS.setAttribute("width", window.innerWidth);
   CANVAS.setAttribute("height", window.innerHeight);
@@ -33,11 +43,6 @@ function canvasInit() {
   TEMP.style.width = `${window.innerWidth}px`;
   TEMP.style.height = `${window.innerHeight}px`;
 }
-
-canvasInit();
-modeInit();
-colorInit();
-export const drawingInfo = new DrawingInfo();
 
 TEMP.addEventListener("mousedown", (e) => {
   drawingInfo.isDrawing = true;
