@@ -1,3 +1,4 @@
+import { colorInit } from "../pad/colorSelect.js";
 import { modeInit } from "../pad/modeSelect.js";
 import { brushMouseDown, brushMouseMove, brushMouseUp } from "./brush.js";
 import { eraserMouseDown, eraserMouseMove, eraserMouseUp } from "./eraser.js";
@@ -35,6 +36,7 @@ function canvasInit() {
 
 canvasInit();
 modeInit();
+colorInit();
 export const drawingInfo = new DrawingInfo();
 
 TEMP.addEventListener("mousedown", (e) => {
