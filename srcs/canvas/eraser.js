@@ -1,16 +1,16 @@
 import { CTX, drawingInfo } from "./canvas.js";
 
-export function penMouseDown(e) {
+export function eraserMouseDown(e) {
   drawingInfo.x = e.offsetX;
   drawingInfo.y = e.offsetY;
 }
 
-export function penMouseMove(e) {
+export function eraserMouseMove(e) {
   CTX.beginPath();
-  CTX.strokeStyle = drawingInfo.currentColor;
+  CTX.strokeStyle = "white";
   CTX.lineCap = "round";
   CTX.lineJoin = "round";
-  CTX.lineWidth = 1;
+  CTX.lineWidth = 5;
   CTX.moveTo(drawingInfo.x, drawingInfo.y);
   CTX.lineTo(e.offsetX, e.offsetY);
   CTX.stroke();
@@ -18,10 +18,10 @@ export function penMouseMove(e) {
   drawingInfo.y = e.offsetY;
 }
 
-export function penMouseUp(e) {
+export function eraserMouseUp(e) {
   CTX.beginPath();
-  CTX.strokeStyle = drawingInfo.currentColor;
-  CTX.lineWidth = 1;
+  CTX.strokeStyle = "white";
+  CTX.lineWidth = 5;
   CTX.moveTo(drawingInfo.x, drawingInfo.y);
   CTX.lineTo(e.offsetX, e.offsetY);
   CTX.stroke();

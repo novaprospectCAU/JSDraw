@@ -34,7 +34,7 @@ body {
   position: relative;
 
   flex-wrap: 5;
-  flex-basis: 90%;
+  flex-basis: 0;
   flex-shrink: 1;
 
   background-color: aliceblue;
