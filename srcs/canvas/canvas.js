@@ -13,6 +13,7 @@ import {
   rectangleMouseUp,
 } from "./rectangle.js";
 import { squareMouseDown, squareMouseMove, squareMouseUp } from "./square.js";
+import { TEXT_HIDDEN, textInit } from "./text.js";
 
 export const CANVAS = document.getElementById("paper");
 export const CTX = CANVAS.getContext("2d");
@@ -44,6 +45,7 @@ export const drawingInfo = new DrawingInfo();
 canvasInit();
 modeInit();
 hslInit();
+textInit();
 
 // -----------------------------------------
 
@@ -64,8 +66,13 @@ function canvasInit() {
 
 TEMP.addEventListener("dblclick", (e) => {
   if (drawingInfo.drawingMode === "text") {
-    isDrawing = true;
-    while (isDrawing) {}
+    drawingInfo.x = e.clientX;
+    drawingInfo.y = e.clientY;
+    TEXT_HIDDEN.style.left = `${drawingInfo.x}px`;
+    TEXT_HIDDEN.style.top = `${drawingInfo.y}px`;
+    drawingInfo.x = e.offsetX;
+    drawingInfo.y = e.offsetY;
+    TEXT_HIDDEN.focus();
   }
 });
 
