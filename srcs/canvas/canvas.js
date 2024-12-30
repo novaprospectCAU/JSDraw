@@ -1,3 +1,5 @@
+import { modeInit } from "../pad/modeSelect.js";
+
 export const CANVAS = document.getElementById("paper");
 export const CTX = CANVAS.getContext("2d");
 export const TEMP = document.getElementById("temp");
@@ -29,6 +31,7 @@ function canvasInit() {
 }
 
 canvasInit();
+modeInit();
 export const drawingInfo = new DrawingInfo();
 
 TEMP.addEventListener("mousedown", (e) => {
@@ -37,19 +40,21 @@ TEMP.addEventListener("mousedown", (e) => {
     case "pen": {
       drawingInfo.x = e.offsetX;
       drawingInfo.y = e.offsetY;
-
       break;
     }
     case "eraser": {
       drawingInfo.x = e.offsetX;
       drawingInfo.y = e.offsetY;
-
       break;
     }
-    case "spray": {
+    case "spoid": {
+      drawingInfo.x = e.offsetX;
+      drawingInfo.y = e.offsetY;
       break;
     }
     case "brush": {
+      drawingInfo.x = e.offsetX;
+      drawingInfo.y = e.offsetY;
       break;
     }
     case "ink": {
@@ -95,6 +100,7 @@ TEMP.addEventListener("mousemove", (e) => {
         CTX.beginPath();
         CTX.strokeStyle = drawingInfo.currentColor;
         CTX.lineCap = "round";
+        CTX.lineJoin = "round";
         CTX.lineWidth = 1;
         CTX.moveTo(drawingInfo.x, drawingInfo.y);
         CTX.lineTo(e.offsetX, e.offsetY);
@@ -107,7 +113,8 @@ TEMP.addEventListener("mousemove", (e) => {
         CTX.beginPath();
         CTX.strokeStyle = "hsl(180deg, 100%, 100%)";
         CTX.lineCap = "round";
-        CTX.lineWidth = 1;
+        CTX.lineJoin = "round";
+        CTX.lineWidth = 5;
         CTX.moveTo(drawingInfo.x, drawingInfo.y);
         CTX.lineTo(e.offsetX, e.offsetY);
         CTX.stroke();
@@ -115,10 +122,20 @@ TEMP.addEventListener("mousemove", (e) => {
         drawingInfo.y = e.offsetY;
         break;
       }
-      case "spray": {
+      case "spoid": {
         break;
       }
       case "brush": {
+        CTX.beginPath();
+        CTX.strokeStyle = drawingInfo.currentColor;
+        CTX.lineCap = "round";
+        CTX.lineJoin = "round";
+        CTX.lineWidth = 10;
+        CTX.moveTo(drawingInfo.x, drawingInfo.y);
+        CTX.lineTo(e.offsetX, e.offsetY);
+        CTX.stroke();
+        drawingInfo.x = e.offsetX;
+        drawingInfo.y = e.offsetY;
         break;
       }
       case "ink": {
@@ -184,10 +201,18 @@ window.addEventListener("mouseup", (e) => {
         drawingInfo.y = 0;
         break;
       }
-      case "spray": {
+      case "spoid": {
         break;
       }
       case "brush": {
+        CTX.beginPath();
+        CTX.strokeStyle = drawingInfo.currentColor;
+        CTX.lineWidth = 10;
+        CTX.moveTo(drawingInfo.x, drawingInfo.y);
+        CTX.lineTo(e.offsetX, e.offsetY);
+        CTX.stroke();
+        drawingInfo.x = 0;
+        drawingInfo.y = 0;
         break;
       }
       case "ink": {
