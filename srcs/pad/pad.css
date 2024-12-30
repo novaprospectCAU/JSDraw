@@ -14,19 +14,6 @@
   width: 100%;
 }
 
-.color.wrapper {
-  display: grid;
-
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 50%;
-
-  background-color: blueviolet;
-
-  height: 50%;
-  width: 100%;
-}
-
 .tool.panel {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -43,4 +30,61 @@
   background-color: rgb(150, 83, 159);
 
   height: 100%;
+}
+
+.color.wrapper {
+  display: grid;
+
+  background-color: blueviolet;
+
+  padding: 16px 0 24px;
+  justify-content: center;
+  gap: 16px 0;
+
+  height: fit-content;
+  width: 100%;
+}
+
+#palette {
+  position: relative;
+  background-color: black;
+
+  border-radius: 50%;
+
+  width: 150px;
+  height: 150px;
+}
+
+#picker {
+  position: absolute;
+  background-color: azure;
+
+  border-radius: 50%;
+  border: 3px solid;
+
+  width: 150px;
+  height: 150px;
+}
+
+.color.values {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-template-rows: repeat(2, 1fr);
+
+  height: 50%;
+  width: auto;
+  gap: 4px 0;
+}
+
+.color.values .value {
+  display: flex;
+  flex-direction: row;
+  width: 50px;
+  height: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+textarea {
+  resize: none;
 }

@@ -30,7 +30,18 @@
             <button id="magnify">magnify</button>
           </div>
         </div>
-        <div class="color wrapper"></div>
+        <div class="color wrapper">
+          <canvas id="palette"></canvas>
+          <canvas id="picker"></canvas>
+          <div class="color values">
+            <div class="value" id="h">h: <textarea readonly></textarea></div>
+            <div class="value" id="s">s: <textarea readonly></textarea></div>
+            <div class="value" id="l">l: <textarea readonly></textarea></div>
+            <div class="value" id="r">r: <textarea readonly></textarea></div>
+            <div class="value" id="g">g: <textarea readonly></textarea></div>
+            <div class="value" id="b">b: <textarea readonly></textarea></div>
+          </div>
+        </div>
       </div>
       <div class="canvas wrapper">
         <canvas id="paper"></canvas>
