@@ -41,8 +41,8 @@
   justify-content: center;
   gap: 16px 0;
 
-  height: fit-content;
   width: 100%;
+  height: fit-content;
 }
 
 #palette {
@@ -71,16 +71,18 @@
   grid-template-columns: repeat(3, 50px);
   grid-template-rows: repeat(2, 1fr);
 
-  height: 50%;
   width: auto;
+  height: 50%;
   gap: 4px 0;
 }
 
 .color.values .value {
   display: flex;
   flex-direction: row;
+
   width: 50px;
   height: 20px;
+
   justify-content: center;
   align-items: stretch;
 }
