@@ -12,6 +12,12 @@ import {
   rectangleMouseMove,
   rectangleMouseUp,
 } from "./rectangle.js";
+import {
+  selectRectInit,
+  selectRectMouseDown,
+  selectRectMouseMove,
+  selectRectMouseUp,
+} from "./selectRect.js";
 import { spoidChangeHSLValue } from "./spoid.js";
 import { squareMouseDown, squareMouseMove, squareMouseUp } from "./square.js";
 import { TEXT_HIDDEN, textInit } from "./text.js";
@@ -47,6 +53,7 @@ export const drawingInfo = new DrawingInfo();
 canvasInit();
 modeInit();
 hslInit();
+selectRectInit();
 textInit();
 
 // -----------------------------------------
@@ -141,6 +148,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "select rect": {
+      selectRectMouseDown(e);
       break;
     }
     case "select poly": {
@@ -201,6 +209,7 @@ TEMP.addEventListener("mousemove", (e) => {
         break;
       }
       case "select rect": {
+        selectRectMouseMove(e);
         break;
       }
       case "select poly": {
@@ -262,6 +271,7 @@ window.addEventListener("mouseup", (e) => {
         break;
       }
       case "select rect": {
+        selectRectMouseUp(e);
         break;
       }
       case "select poly": {
