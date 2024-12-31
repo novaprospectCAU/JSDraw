@@ -1,8 +1,8 @@
 import { drawingInfo } from "../canvas/canvas.js";
 
-const TEXTAREA_H = document.getElementById("h");
-const TEXTAREA_S = document.getElementById("s");
-const TEXTAREA_L = document.getElementById("l");
+export const TEXTAREA_H = document.getElementById("h");
+export const TEXTAREA_S = document.getElementById("s");
+export const TEXTAREA_L = document.getElementById("l");
 
 const SUBMIT = document.getElementById("submitColor");
 

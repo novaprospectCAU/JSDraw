@@ -12,11 +12,13 @@ import {
   rectangleMouseMove,
   rectangleMouseUp,
 } from "./rectangle.js";
+import { spoidChangeHSLValue } from "./spoid.js";
 import { squareMouseDown, squareMouseMove, squareMouseUp } from "./square.js";
 import { TEXT_HIDDEN, textInit } from "./text.js";
+import { rgbToHsl } from "./utils.js";
 
 export const CANVAS = document.getElementById("paper");
-export const CTX = CANVAS.getContext("2d");
+export const CTX = CANVAS.getContext("2d", { willReadFrequently: true });
 export const TEMP = document.getElementById("temp");
 export const TEMP_CTX = TEMP.getContext("2d");
 
@@ -76,6 +78,22 @@ TEMP.addEventListener("dblclick", (e) => {
   }
 });
 
+TEMP.addEventListener("click", (e) => {
+  if (drawingInfo.drawingMode === "spoid") {
+    drawingInfo.x = e.pageX;
+    drawingInfo.y = e.pageY;
+
+    const imgData = CTX.getImageData(e.offsetX, e.offsetY, 1, 1);
+    const rgbR = imgData.data[0];
+    const rgbG = imgData.data[1];
+    const rgbB = imgData.data[2];
+    // const rgbA = imgData.data[3];
+
+    const { h, s, l } = rgbToHsl(rgbR, rgbG, rgbB);
+    spoidChangeHSLValue(h, s, l);
+  }
+});
+
 TEMP.addEventListener("mousedown", (e) => {
   drawingInfo.isDrawing = true;
   switch (drawingInfo.drawingMode) {
@@ -88,8 +106,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "spoid": {
-      drawingInfo.x = e.offsetX;
-      drawingInfo.y = e.offsetY;
+      // click에서 처리
       break;
     }
     case "brush": {
@@ -100,6 +117,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "text": {
+      // dblclick에서 처리
       break;
     }
     case "line": {
@@ -129,6 +147,7 @@ TEMP.addEventListener("mousedown", (e) => {
       break;
     }
     case "clear": {
+      // 따로 이벤트로 처리
       break;
     }
     default: {
