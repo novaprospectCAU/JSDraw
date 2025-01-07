@@ -12,11 +12,6 @@ import {
   rectangleMouseMove,
   rectangleMouseUp,
 } from "./rectangle.js";
-// import {
-//   selectRectMouseDown,
-//   selectRectMouseMove,
-//   selectRectMouseUp,
-// } from "./selectRect.js";
 import { spoidChangeHSLValue } from "./spoid.js";
 import { squareMouseDown, squareMouseMove, squareMouseUp } from "./square.js";
 import { TEXT_HIDDEN, textInit } from "./text.js";
@@ -146,13 +141,6 @@ TEMP.addEventListener("mousedown", (e) => {
       ovalMouseDown(e);
       break;
     }
-    // case "select rect": {
-    //   selectRectMouseDown(e);
-    //   break;
-    // }
-    // case "select poly": {
-    //   break;
-    // }
     case "clear": {
       // 따로 이벤트로 처리
       break;
@@ -207,13 +195,6 @@ TEMP.addEventListener("mousemove", (e) => {
         ovalMouseMove(e);
         break;
       }
-      // case "select rect": {
-      //   selectRectMouseMove(e);
-      //   break;
-      // }
-      // case "select poly": {
-      //   break;
-      // }
       case "clear": {
         break;
       }
@@ -269,13 +250,6 @@ window.addEventListener("mouseup", (e) => {
         ovalMouseUp(e);
         break;
       }
-      // case "select rect": {
-      //   selectRectMouseUp(e);
-      //   break;
-      // }
-      // case "select poly": {
-      //   break;
-      // }
       case "clear": {
         break;
       }

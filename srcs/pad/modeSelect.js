@@ -15,8 +15,6 @@ const ModeSet = [
   "rectangle",
   "circle",
   "oval",
-  // "select rect",
-  // "select poly",
   "clear",
 ];
 
