@@ -25,7 +25,7 @@
   flex-shrink: 0;
   flex-basis: 70%;
 
-  background-color: rgb(150, 83, 159);
+  background-color: antiquewhite;
 
   height: 100%;
 }
@@ -37,7 +37,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  background-color: blueviolet;
+  background-color: antiquewhite;
 
   padding: 16px 0 24px;
 
